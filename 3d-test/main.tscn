@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://x58h8kr2aifu"]
+[gd_scene load_steps=7 format=3 uid="uid://x58h8kr2aifu"]
 
+[ext_resource type="Script" uid="uid://o6mt31p4euoj" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Player.tscn" id="1_ig7tw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
@@ -15,6 +16,7 @@ size = Vector3(10, 10, 20)
 size = Vector3(30, 10, 10)
 
 [node name="Node" type="Node"]
+script = ExtResource("1_0xm2m")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 collision_layer = 4
@@ -69,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 3, 5)
+v_offset = 7.5
 projection = 1
 size = 10.0
 

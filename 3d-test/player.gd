@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var bounce_impulse = 16
 
 var target_velocity = Vector3.ZERO
-var start = 156
+var start = 234
 
 func _input(event):
 	if event is InputEventKey:
@@ -61,7 +61,8 @@ func _physics_process(delta):
 					break
 	else:
 		start-=1
-		$AnimationPlayer.current_animation="Start"
+		if start < 157:
+			$AnimationPlayer.current_animation="Start"
 		if start == 0:
 			$AnimationPlayer.current_animation="Idle"
 	velocity = target_velocity
