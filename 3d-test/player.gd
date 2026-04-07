@@ -61,7 +61,7 @@ func _physics_process(delta):
 					break
 	else:
 		start-=1
-		if start < 157:
+		if start < 163:
 			$AnimationPlayer.current_animation="Start"
 		if start == 0:
 			$AnimationPlayer.current_animation="Idle"
