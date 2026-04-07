@@ -59,7 +59,7 @@ shape = SubResource("BoxShape3D_0xm2m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 3, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5, 5)
 v_offset = 7.5
 projection = 1
 size = 10.0
@@ -78,7 +78,7 @@ visible = false
 mesh = SubResource("BoxMesh_ig7tw")
 
 [node name="Sprite3D" type="Sprite3D" parent="Floor"]
-transform = Transform3D(4, 0, 0, 0, 3.4641016, 2, 0, -2, 3.4641016, 0, -4, -12)
+transform = Transform3D(4, 0, 0, 0, 2.828427, 2.828427, 0, -2.828427, 2.828427, 0, -4, -8)
 layers = 512
 texture = ExtResource("2_h2yge")
 
