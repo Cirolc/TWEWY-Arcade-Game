@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b487ku7qfvd2d"]
+[gd_scene load_steps=10 format=3 uid="uid://b487ku7qfvd2d"]
 
 [ext_resource type="Script" uid="uid://bniwiafh83c8c" path="res://player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://dnxqfrk8rq2mc" path="res://Art/Neku_spritesheet.png" id="2_kpjcp"]
@@ -94,9 +94,12 @@ _data = {
 &"Start": SubResource("Animation_cxr5p")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kpjcp"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mi")]
 collision_mask = 6
 script = ExtResource("1_xhfnw")
+mi = NodePath("MeshInstance3D")
 
 [node name="Pivot" type="Node3D" parent="."]
 
@@ -116,3 +119,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_e80uo")
 }
 autoplay = "Idle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_kpjcp")

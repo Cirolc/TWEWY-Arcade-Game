@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var fall_acceleration = 75
 @export var jump_impulse = 20
 @export var bounce_impulse = 16
+@export var mi : CharacterBody3D
 
 var target_velocity = Vector3.ZERO
 var start = 234
@@ -15,6 +16,11 @@ func _input(event):
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
+	var mousePos = $Camera3D.get_viewport().get_mouse_position()
+	var ray = $Camera3D.project_ray_origin(mousePos)
+	var camdirection = $Camera3D.project_ray_normal(mousePos)
+	var plane = Plane(Vector3.UP)
+	var inters = plane.intersects_ray(ray, camdirection)
 
 	if start == 0:
 		if Input.is_action_pressed("Right"):
