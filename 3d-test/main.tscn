@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://x58h8kr2aifu"]
+[gd_scene format=3 uid="uid://x58h8kr2aifu"]
 
 [ext_resource type="Script" uid="uid://o6mt31p4euoj" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Player.tscn" id="1_ig7tw"]
@@ -12,75 +12,74 @@ size = Vector3(10, 10, 20)
 size = Vector3(30, 10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
-size = Vector3(21, 2, 10)
+size = Vector3(21, 2, 20)
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" unique_id=1117713365]
 script = ExtResource("1_0xm2m")
 
-[node name="Wall" type="StaticBody3D" parent="."]
+[node name="Wall" type="StaticBody3D" parent="." unique_id=74103165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.25, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=941423444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="Wall2" type="StaticBody3D" parent="."]
+[node name="Wall2" type="StaticBody3D" parent="." unique_id=1888999542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.25, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=395810666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="Wall3" type="StaticBody3D" parent="."]
+[node name="Wall3" type="StaticBody3D" parent="." unique_id=1122606386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3" unique_id=193273583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 9.5)
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="Wall4" type="StaticBody3D" parent="."]
+[node name="Wall4" type="StaticBody3D" parent="." unique_id=196719975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -20)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4" unique_id=1532225906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 10)
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1469410769 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=842744010]
 transform = Transform3D(0.71428573, 0, 0, 0, 0.5050763, 0.5050763, 0, -0.5050763, 0.5050763, 0, 6.4285717, 6.4285717)
 v_offset = 5.9
 projection = 1
 size = 8.0
 
-[node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1106271651]
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=32749714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_7dm0k")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1787217089]
 transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.86602545, 0, -0.86602545, 0.49999994, 0, 10, 5)
 shadow_enabled = true
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1590895208]
 transform = Transform3D(4, 0, 0, 0, 2.1213202, 2.828427, 0, -2.1213202, 2.828427, 0, -8, -12.2)
 layers = 512
 texture = ExtResource("2_h2yge")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 3.5355341)
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=890486643]
+transform = Transform3D(1, 0, 0, 0, 1.0000005, 0, 0, 0, 1, 0, 0, 4.94975)
 layers = 512
 texture = ExtResource("4_1bvp3")

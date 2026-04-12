@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b487ku7qfvd2d"]
+[gd_scene format=3 uid="uid://b487ku7qfvd2d"]
 
 [ext_resource type="Script" uid="uid://bniwiafh83c8c" path="res://player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://dnxqfrk8rq2mc" path="res://Art/Neku_spritesheet.png" id="2_kpjcp"]
@@ -96,17 +96,17 @@ _data = {
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kpjcp"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mi")]
+[node name="Player" type="CharacterBody3D" unique_id=1626071706 node_paths=PackedStringArray("mi")]
 collision_mask = 6
 script = ExtResource("1_xhfnw")
 mi = NodePath("MeshInstance3D")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=255348864]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=203766690]
 shape = SubResource("CapsuleShape3D_xhfnw")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1346048025]
 transform = Transform3D(3.5, 0, 0, 0, 2.4748735, 2.4748735, 0, -2.4748735, 2.4748735, 0, 0, 0)
 offset = Vector2(0, 7)
 texture = ExtResource("2_kpjcp")
@@ -114,11 +114,9 @@ hframes = 11
 vframes = 20
 frame = 22
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_e80uo")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229384546]
+libraries/ = SubResource("AnimationLibrary_e80uo")
+autoplay = &"Idle"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=506664277]
 mesh = SubResource("CapsuleMesh_kpjcp")
