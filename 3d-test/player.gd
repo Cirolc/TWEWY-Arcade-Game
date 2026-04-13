@@ -18,7 +18,20 @@ var direction = Vector3.ZERO
 func _physics_process(delta):
 	var mousePos = get_viewport().get_mouse_position()
 	print(mousePos)
+	var rayOrg:Vector3 = $Camera3D.project_ray_origin(mousePos)
+	var rayNor:Vector3 = $Camera3D.project_ray_normal(mousePos)
+	var Inters = Plane(Vector3.UP).intersects_ray(rayOrg,rayNor)
 	if start == 0:
+		if Inters and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+			direction = Inters.x
+			global_position.z = Inters.z
+			global_position.x = clamp(global_position.x,-10,10)
+			global_position.z = clamp(global_position.z,-5,4)
+			$Marker.global_position.x = Inters.x
+			$Marker.global_position.z = Inters.z
+			$Marker.global_position.x = clamp(global_position.x,-10,10)
+			$Marker.global_position.z = clamp(global_position.z,-5,4)
+
 		if direction:
 			velocity = -transform.basis.z * speed
 			if transform.origin.distance_to(direction) < .5:

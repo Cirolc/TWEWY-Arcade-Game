@@ -4,54 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://c3rku4ehrjuxr" path="res://Art/Neku_bg.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://fryd6mqc1r6g" path="res://Art/stoplight.png" id="4_1bvp3"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
-size = Vector3(10, 10, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-size = Vector3(30, 10, 10)
+[ext_resource type="PackedScene" uid="uid://cfunn61g83r45" path="res://Marker.tscn" id="5_lquwl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(21, 2, 20)
 
 [node name="Node" type="Node" unique_id=1117713365]
 script = ExtResource("1_0xm2m")
-
-[node name="Wall" type="StaticBody3D" parent="." unique_id=74103165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.25, 0, 0)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=941423444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("BoxShape3D_ig7tw")
-
-[node name="Wall2" type="StaticBody3D" parent="." unique_id=1888999542]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.25, 0, 0)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=395810666]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("BoxShape3D_ig7tw")
-
-[node name="Wall3" type="StaticBody3D" parent="." unique_id=1122606386]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3" unique_id=193273583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 9.5)
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="Wall4" type="StaticBody3D" parent="." unique_id=196719975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -20)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4" unique_id=1532225906]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 10)
-shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="Player" parent="." unique_id=1469410769 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -61,6 +20,10 @@ transform = Transform3D(0.71428573, 0, 0, 0, 0.5050763, 0.5050763, 0, -0.5050763
 v_offset = 5.9
 projection = 1
 size = 8.0
+
+[node name="Marker" parent="Player" unique_id=1243841968 instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+skeleton = NodePath("../..")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1106271651]
 collision_layer = 4
