@@ -4,9 +4,7 @@ var wait = 60
 var stop = false
 var x = 0
 var z = 0
-
-func _ready() -> void:
-	pass
+var start = 214
 
 func _process(delta: float) -> void:
 	if not stop:
@@ -18,9 +16,13 @@ func _process(delta: float) -> void:
 		$Camera3D.v_offset = 0
 		stop=true
 
+	$Camera3D.global_position = $Player.global_position
+	$Camera3D.global_position[1] += 6.4
+	$Camera3D.global_position[2] += 6.4
+	$Camera3D.rotation.y = 0
+
 	x = $Camera3D.global_position[0]
 	x = clamp(x,-3,3)
-	$Camera3D.global_position[0] = x
 	if $Player.global_position[0] > 3 or $Player.global_position[0] < -3:
 		if x < 0:
 			x = -3
@@ -28,18 +30,21 @@ func _process(delta: float) -> void:
 			x = 3
 	$Camera3D.global_position[0] = x
 	z = $Camera3D.global_position[2]
-	z = clamp(z,-5,8)
+	z = clamp(z,-7,8)
 	if $Player.global_position[2] > 1.5 or $Player.global_position[2] < -5:
 		if z < 0:
-			z = -5
+			z = -7
 		else:
 			z = 8
 	$Camera3D.global_position[2] = z
+	if start != 0:
+		start -= 1
 
 func _on_floor_input_event(camera, event, click_position, click_normal, shape_idx) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and start == 0:
 		$Marker.transform.origin = click_position
+		$Marker.visible = true
 		$Marker.transform.origin[0] = clamp($Marker.transform.origin[0], -10, 10)
-		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], -5, 4)
+		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], -4.9, 4)
 		click_position = ($Marker.transform.origin)
 		$Player.direction = click_position
