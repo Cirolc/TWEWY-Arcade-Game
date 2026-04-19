@@ -1,15 +1,13 @@
 extends CharacterBody3D
 
 @export var speed = 8
-@export var Dodge_speed = 18
+@export var Dodge_speed = 20
 @export var fall_acceleration = 75
 @export var jump_impulse = 20
 @export var bounce_impulse = 16
 
-var start = 234
+var start = 325
 var dodge = 0
-var comp
-
 var direction = Vector3.ZERO
 
 func _physics_process(delta):
@@ -20,7 +18,11 @@ func _physics_process(delta):
 			rotation.x = 0
 			$Sprite3D.rotation.y = -rotation.y
 			if dodge != 0:
-				velocity = -transform.basis.z * Dodge_speed
+				if dodge < 38:
+					velocity = -transform.basis.z * Dodge_speed
+				else:
+					velocity.x = 0
+					velocity.z = 0
 				$AnimationPlayer.current_animation="Dodge"
 				dodge -= 1
 			else:
@@ -60,4 +62,4 @@ func _on_marker_moved():
 	velocity.z = 0
 
 func _on_marker_dodged() -> void:
-	dodge = 40
+	dodge = 46

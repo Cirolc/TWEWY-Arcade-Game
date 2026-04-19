@@ -19,6 +19,11 @@ run/main_scene="uid://x58h8kr2aifu"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [input]
 
 Up={
