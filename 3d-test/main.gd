@@ -22,23 +22,23 @@ func _process(delta: float) -> void:
 	$Camera3D.rotation.y = 0
 
 	x = $Camera3D.global_position[0]
-	x = clamp(x,-6,6)
-	if $Player.global_position[0] > 6 or $Player.global_position[0] < -6:
+	x = clamp(x,-6.69,6.69)
+	if $Player.global_position[0] > 6.69 or $Player.global_position[0] < -6.69:
 		if x < 0:
-			x = -6
+			x = -6.69
 		else:
-			x = 6
+			x = 6.69
 	$Camera3D.global_position[0] = x
 	z = $Camera3D.global_position[2]
 	z = clamp(z,-7,8)
-	if $Player.global_position[2] > 1.5 or $Player.global_position[2] < -5:
+	if $Player.global_position[2] < -5:
 		if z > 2:
 			z = 8
 	$Camera3D.global_position[2] = z
 	if start != 0:
 		start -= 1
 
-func _on_floor_input_event(camera, event, click_position, click_normal, shape_idx) -> void:
+func _on_floor_input_event(camera, event, click_position, click_normal, shape_idx):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and start == 0:
 		$Marker.transform.origin = click_position
 		$Marker.visible = true
