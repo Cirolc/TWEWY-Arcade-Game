@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 			$Camera3D.h_offset += 0.075
 		else:
 			wait -= 1
-	if $Camera3D.h_offset > -3:
-		$Camera3D.h_offset = -3
+	if $Camera3D.h_offset > -2.5:
+		$Camera3D.h_offset = -2.5
 		stop=true
 
 	$Camera3D.global_position = $Player.global_position
@@ -32,9 +32,7 @@ func _process(delta: float) -> void:
 	z = $Camera3D.global_position[2]
 	z = clamp(z,-7,8)
 	if $Player.global_position[2] > 1.5 or $Player.global_position[2] < -5:
-		if z < 0:
-			z = -7
-		else:
+		if z > 2:
 			z = 8
 	$Camera3D.global_position[2] = z
 	if start != 0:

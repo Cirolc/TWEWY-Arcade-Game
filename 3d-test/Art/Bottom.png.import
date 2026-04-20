@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnxqfrk8rq2mc"
-path="res://.godot/imported/Neku_spritesheet.png-6642404020c05339338716489ea62d84.ctex"
+uid="uid://dspro0e18gplt"
+path="res://.godot/imported/Bottom.png-6e499b8484d210f5c10df6a4e06613d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Neku_spritesheet.png"
-dest_files=["res://.godot/imported/Neku_spritesheet.png-6642404020c05339338716489ea62d84.ctex"]
+source_file="res://Art/Bottom.png"
+dest_files=["res://.godot/imported/Bottom.png-6e499b8484d210f5c10df6a4e06613d2.ctex"]
 
 [params]
 
 compress/mode=0
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
