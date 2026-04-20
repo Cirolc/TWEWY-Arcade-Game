@@ -5,7 +5,7 @@ var dodge = 0
 signal dodged
 signal moved
 
-func _process(delta: float):
+func _process(_delta):
 	comp = get_node("../Player").global_position - global_position
 	if comp[0] < 0:
 		comp[0] -= comp[0] * 2

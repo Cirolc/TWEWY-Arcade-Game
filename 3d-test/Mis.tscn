@@ -80,21 +80,19 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Damage" type="ColorRect" parent="Normal" unique_id=611254950]
+[node name="Up" type="Control" parent="Normal" unique_id=170429631]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Damage" type="ColorRect" parent="Normal/Up" unique_id=611254950]
 layout_mode = 0
 offset_left = -1003.0
 offset_right = 13.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
-[node name="Damage2" type="ColorRect" parent="Normal" unique_id=303785539]
-layout_mode = 0
-offset_left = 895.0
-offset_right = 1911.0
-offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
-
-[node name="Missing" type="ColorRect" parent="Normal" unique_id=1325485874]
+[node name="Missing" type="ColorRect" parent="Normal/Up" unique_id=1325485874]
 layout_mode = 0
 offset_left = -999.0
 offset_right = 13.0
@@ -102,7 +100,19 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 
-[node name="Missing2" type="ColorRect" parent="Normal" unique_id=2014741373]
+[node name="Down" type="Control" parent="Normal" unique_id=1761236733]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Damage" type="ColorRect" parent="Normal/Down" unique_id=303785539]
+layout_mode = 0
+offset_left = 895.0
+offset_right = 1911.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="Missing" type="ColorRect" parent="Normal/Down" unique_id=2014741373]
 layout_mode = 0
 offset_left = 895.0
 offset_right = 1850.0
@@ -118,21 +128,19 @@ offset_bottom = 720.0
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Damage" type="ColorRect" parent="Boss" unique_id=319665047]
+[node name="Up" type="Control" parent="Boss" unique_id=591910863]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Damage" type="ColorRect" parent="Boss/Up" unique_id=319665047]
 layout_mode = 0
 offset_left = -1007.0
 offset_right = 9.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
-[node name="Damage3" type="ColorRect" parent="Boss" unique_id=1223513832]
-layout_mode = 0
-offset_left = 891.0
-offset_right = 1907.0
-offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
-
-[node name="Normal" type="ColorRect" parent="Boss" unique_id=929660939]
+[node name="Normal" type="ColorRect" parent="Boss/Up" unique_id=929660939]
 layout_mode = 0
 offset_left = -904.0
 offset_right = 9.0
@@ -140,29 +148,14 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Normal2" type="ColorRect" parent="Boss" unique_id=1834137306]
-layout_mode = 0
-offset_left = 891.0
-offset_right = 1804.0
-offset_bottom = 40.0
-mouse_filter = 2
-color = Color(0, 1, 0, 1)
-
-[node name="Damage4" type="ColorRect" parent="Boss" unique_id=1727099909]
+[node name="Damage2" type="ColorRect" parent="Boss/Up" unique_id=1727099909]
 layout_mode = 0
 offset_left = -1007.0
 offset_right = 9.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
-[node name="Damage2" type="ColorRect" parent="Boss" unique_id=792052987]
-layout_mode = 0
-offset_left = 891.0
-offset_right = 1907.0
-offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
-
-[node name="Missing" type="ColorRect" parent="Boss" unique_id=1381835709]
+[node name="Missing" type="ColorRect" parent="Boss/Up" unique_id=1381835709]
 layout_mode = 0
 offset_left = -1003.0
 offset_right = 9.0
@@ -170,7 +163,34 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 
-[node name="Missing2" type="ColorRect" parent="Boss" unique_id=187583308]
+[node name="Down" type="Control" parent="Boss" unique_id=618008282]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Damage" type="ColorRect" parent="Boss/Down" unique_id=792052987]
+layout_mode = 0
+offset_left = 891.0
+offset_right = 1907.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="Normal" type="ColorRect" parent="Boss/Down" unique_id=1834137306]
+layout_mode = 0
+offset_left = 891.0
+offset_right = 1804.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Damage2" type="ColorRect" parent="Boss/Down" unique_id=1223513832]
+layout_mode = 0
+offset_left = 891.0
+offset_right = 1907.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="Missing" type="ColorRect" parent="Boss/Down" unique_id=187583308]
 layout_mode = 0
 offset_left = 891.0
 offset_right = 1846.0

@@ -16,6 +16,7 @@ func _physics_process(delta):
 		if direction:
 			look_at(direction, Vector3.UP)
 			rotation.x = 0
+			rotation.z = 0
 			$Sprite3D.rotation.y = -rotation.y
 			if dodge != 0:
 				if dodge < 38:
