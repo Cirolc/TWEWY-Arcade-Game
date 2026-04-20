@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fryd6mqc1r6g" path="res://Art/stoplight.png" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cfunn61g83r45" path="res://Marker.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://bqisnggka4pgr" path="res://marker.gd" id="6_7mycd"]
-[ext_resource type="AudioStream" uid="uid://du2wl7lt5tenn" path="res://Music/The-One-Star.mp3" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://pcvrnxr0tdbh" path="res://Music/The-One-Star.mp3" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://w0sjdueffrmj" path="res://Mis.tscn" id="8_5vw27"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]

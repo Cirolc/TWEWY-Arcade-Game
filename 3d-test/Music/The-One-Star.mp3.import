@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://du2wl7lt5tenn"
+uid="uid://pcvrnxr0tdbh"
 path="res://.godot/imported/The-One-Star.mp3-f1c4816b0af1c5b93da571a38d5b59eb.mp3str"
 
 [deps]
@@ -14,6 +14,6 @@ dest_files=["res://.godot/imported/The-One-Star.mp3-f1c4816b0af1c5b93da571a38d5b
 
 loop=true
 loop_offset=11.76
-bpm=0.0
+bpm=0
 beat_count=0
 bar_beats=4
