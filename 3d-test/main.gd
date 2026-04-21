@@ -22,12 +22,12 @@ func _process(_delta):
 	$Camera3D.rotation.y = 0
 
 	x = $Camera3D.global_position[0]
-	x = clamp(x,-6.68,6.68)
-	if $Player.global_position[0] > 6.68 or $Player.global_position[0] < -6.68:
+	x = clamp(x,-4.6,4.6)
+	if $Player.global_position[0] > 4.6 or $Player.global_position[0] < -4.6:
 		if x < 0:
-			x = -6.68
+			x = -4.6
 		else:
-			x = 6.68
+			x = 4.6
 	$Camera3D.global_position[0] = x
 	z = $Camera3D.global_position[2]
 	z = clamp(z,-7,8)
@@ -42,7 +42,7 @@ func _on_floor_input_event(_camera, _event, click_position, _click_normal, _shap
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and start == 0:
 		$Marker.transform.origin = click_position
 		$Marker.visible = true
-		$Marker.transform.origin[0] = clamp($Marker.transform.origin[0], -10, 10)
-		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], -5, 4)
+		$Marker.transform.origin[0] = clamp($Marker.transform.origin[0], -8, 8)
+		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], -3, 4)
 		click_position = ($Marker.transform.origin)
 		$Player.direction = click_position

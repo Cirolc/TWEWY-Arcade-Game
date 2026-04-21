@@ -53,8 +53,8 @@ func _physics_process(delta):
 			$AnimationPlayer.current_animation="Start"
 		if start == 0:
 			$AnimationPlayer.current_animation="Idle"
-	global_position.x = clamp(global_position.x, -10, 10)
-	global_position.z = clamp(global_position.z, -5, 4)
+	global_position.x = clamp(global_position.x, -8, 8)
+	global_position.z = clamp(global_position.z, -3, 4)
 	move_and_slide()
 
 func _on_marker_moved():
