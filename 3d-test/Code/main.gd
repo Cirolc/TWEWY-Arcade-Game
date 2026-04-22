@@ -10,15 +10,18 @@ func _process(_delta):
 	if not stop:
 		if wait == 0:
 			$Camera3D.h_offset += 0.075
+			$Camera3D/Sprite3D.offset.y -= 2.664
 		else:
+			$Camera3D/Sprite3D.offset.y = 231.1
 			wait -= 1
 	if $Camera3D.h_offset > -2.5:
 		$Camera3D.h_offset = -2.5
+		$Camera3D/Sprite3D.offset.y = 0.25
 		stop=true
 
 	$Camera3D.global_position = $Player.global_position
-	$Camera3D.global_position[1] += 6.4
-	$Camera3D.global_position[2] += 6.4
+	$Camera3D.global_position[1] += 10
+	$Camera3D.global_position[2] += 10
 	$Camera3D.rotation.y = 0
 
 	x = $Camera3D.global_position[0]
@@ -30,10 +33,10 @@ func _process(_delta):
 			x = 4.6
 	$Camera3D.global_position[0] = x
 	z = $Camera3D.global_position[2]
-	z = clamp(z,-7,8)
+	z = clamp(z,-7,11.6)
 	if $Player.global_position[2] < -5:
 		if z > 2:
-			z = 8
+			z = 11.6
 	$Camera3D.global_position[2] = z
 	if start != 0:
 		start -= 1

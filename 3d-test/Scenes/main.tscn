@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://x58h8kr2aifu"]
 
-[ext_resource type="Script" uid="uid://o6mt31p4euoj" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://o6mt31p4euoj" path="res://Code/main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Scenes/Player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://c3rku4ehrjuxr" path="res://Art/Neku_bg.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://fryd6mqc1r6g" path="res://Art/stoplight.png" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cfunn61g83r45" path="res://Marker.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://bqisnggka4pgr" path="res://marker.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cfunn61g83r45" path="res://Scenes/Marker.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://bqisnggka4pgr" path="res://Code/marker.gd" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://pcvrnxr0tdbh" path="res://Music/The-One-Star.mp3" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://w0sjdueffrmj" path="res://Mis.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://d4ahnc7x67tmg" path="res://Art/Partner_bg.png" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://w0sjdueffrmj" path="res://Scenes/Mis.tscn" id="8_5vw27"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(21, 2, 20)
@@ -30,6 +31,17 @@ shape = SubResource("BoxShape3D_7dm0k")
 transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.86602545, 0, -0.86602545, 0.49999994, 0, 10, 5)
 shadow_enabled = true
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=842744010]
+transform = Transform3D(-3.0908623e-08, 1, 8.2101416e-16, -0.7071068, -2.1855696e-08, 0.7071068, 0.7071068, 2.1855696e-08, 0.7071068, 0, 10, 10)
+h_offset = -9.0
+projection = 1
+size = 8.0
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D" unique_id=801806679]
+transform = Transform3D(-1.2304756e-07, -2.815, 0, 2.815, -1.2304756e-07, -1.2739032e-29, 1.2739032e-29, -5.568408e-37, 2.815, -5.12, 0, -6)
+offset = Vector2(0, 1)
+texture = ExtResource("7_ynf5e")
+
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1590895208]
 transform = Transform3D(3.2, 0, 0, 0, 1.6970563, 2.2627418, 0, -1.6970563, 2.2627418, 0, -8, -11.2)
 layers = 512
@@ -42,12 +54,6 @@ texture = ExtResource("4_1bvp3")
 
 [node name="Marker" parent="." unique_id=1243841968 instance=ExtResource("5_lquwl")]
 script = ExtResource("6_7mycd")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=842744010]
-transform = Transform3D(-3.090862e-08, 1, -9.553427e-16, -0.70710677, -2.1855694e-08, 0.70710677, 0.70710677, 2.1855694e-08, 0.70710677, 0, 7.4285717, 6.4285717)
-h_offset = -9.0
-projection = 1
-size = 8.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1121132303]
 stream = ExtResource("7_272bh")
