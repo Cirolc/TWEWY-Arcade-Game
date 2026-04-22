@@ -73,6 +73,11 @@ mouse_filter = 2
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_4c57u")
 
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1901988135]
+position = Vector2(640, 358)
+scale = Vector2(0.008, 1)
+texture = ExtResource("3_efrdq")
+
 [node name="Normal" type="ColorRect" parent="." unique_id=1576721258]
 offset_left = 186.0
 offset_right = 1099.0

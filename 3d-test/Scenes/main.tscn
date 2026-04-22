@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b487ku7qfvd2d" path="res://Scenes/Player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://c3rku4ehrjuxr" path="res://Art/Neku_bg.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://fryd6mqc1r6g" path="res://Art/stoplight.png" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dsn2cymyld1al" path="res://Scenes/Partner.tscn" id="4_hptm8"]
 [ext_resource type="PackedScene" uid="uid://cfunn61g83r45" path="res://Scenes/Marker.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://bqisnggka4pgr" path="res://Code/marker.gd" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://pcvrnxr0tdbh" path="res://Music/The-One-Star.mp3" id="7_272bh"]
@@ -12,6 +13,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(21, 2, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynf5e"]
+size = Vector3(1, 8, 1.5)
 
 [node name="Node" type="Node" unique_id=1117713365]
 script = ExtResource("1_0xm2m")
@@ -32,15 +36,22 @@ transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.86602545, 0, -0.86602545, 0.49
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=842744010]
-transform = Transform3D(-3.0908623e-08, 1, 8.2101416e-16, -0.7071068, -2.1855696e-08, 0.7071068, 0.7071068, 2.1855696e-08, 0.7071068, 0, 10, 10)
-h_offset = -9.0
+transform = Transform3D(-3.0908623e-08, 1, 8.2101416e-16, -0.7071068, -2.1855696e-08, 0.7071068, 0.7071068, 2.1855696e-08, 0.7071068, 0, 15, 15)
+h_offset = -7.85
 projection = 1
 size = 8.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Camera3D" unique_id=801806679]
-transform = Transform3D(-1.2304756e-07, -2.815, 0, 2.815, -1.2304756e-07, -1.2739032e-29, 1.2739032e-29, -5.568408e-37, 2.815, -5.12, 0, -6)
+transform = Transform3D(-1.2151766e-07, -2.78, -4.3e-44, 2.78, -1.2151766e-07, -1.2580642e-29, 1.2580642e-29, -5.499174e-37, 2.78, -5.12, 0, -11)
 offset = Vector2(0, 1)
 texture = ExtResource("7_ynf5e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=2086257929]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.75, 0, -10)
+mesh = SubResource("BoxMesh_ynf5e")
+
+[node name="Partner" parent="Camera3D" unique_id=2069743374 instance=ExtResource("4_hptm8")]
+transform = Transform3D(-3.0908616e-08, -0.70710677, 0.70710677, 1, -4.371139e-08, 0, 3.0908623e-08, 0.70710677, 0.70710677, -3.7, 0, -8.9)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1590895208]
 transform = Transform3D(3.2, 0, 0, 0, 1.6970563, 2.2627418, 0, -1.6970563, 2.2627418, 0, -8, -11.2)

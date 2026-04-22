@@ -2,7 +2,7 @@
 A TWEWY fangame made to the best of my ability.
 A passion project.
 
-This game is being made for about 6 months (starting [March 31st, 2026]).
+This game is being made for about 3 months (starting [March 31st, 2026]).
 
 The game is far from complete.
 Missing:

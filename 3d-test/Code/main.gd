@@ -10,18 +10,18 @@ func _process(_delta):
 	if not stop:
 		if wait == 0:
 			$Camera3D.h_offset += 0.075
-			$Camera3D/Sprite3D.offset.y -= 2.664
+			$Camera3D/Sprite3D.offset.y -= 2.7
 		else:
-			$Camera3D/Sprite3D.offset.y = 231.1
+			$Camera3D/Sprite3D.offset.y = 194.5
 			wait -= 1
 	if $Camera3D.h_offset > -2.5:
 		$Camera3D.h_offset = -2.5
-		$Camera3D/Sprite3D.offset.y = 0.25
+		$Camera3D/Sprite3D.offset.y = 1.9
 		stop=true
 
 	$Camera3D.global_position = $Player.global_position
-	$Camera3D.global_position[1] += 10
-	$Camera3D.global_position[2] += 10
+	$Camera3D.global_position[1] += 15
+	$Camera3D.global_position[2] += 15
 	$Camera3D.rotation.y = 0
 
 	x = $Camera3D.global_position[0]
@@ -33,10 +33,10 @@ func _process(_delta):
 			x = 4.6
 	$Camera3D.global_position[0] = x
 	z = $Camera3D.global_position[2]
-	z = clamp(z,-7,11.6)
+	z = clamp(z,-7,16.6)
 	if $Player.global_position[2] < -5:
 		if z > 2:
-			z = 11.6
+			z = 16.6
 	$Camera3D.global_position[2] = z
 	if start != 0:
 		start -= 1
@@ -46,6 +46,8 @@ func _on_floor_input_event(_camera, _event, click_position, _click_normal, _shap
 		$Marker.transform.origin = click_position
 		$Marker.visible = true
 		$Marker.transform.origin[0] = clamp($Marker.transform.origin[0], -8, 8)
+		$Marker.transform.origin[0] = clamp($Marker.transform.origin[0], $Camera3D.global_position[0]-3.3, $Camera3D.global_position[0]+3.3)
 		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], -3, 4)
+		$Marker.transform.origin[2] = clamp($Marker.transform.origin[2], $Camera3D.global_position[2]-18.8, $Camera3D.global_position[2]-12)
 		click_position = ($Marker.transform.origin)
 		$Player.direction = click_position
