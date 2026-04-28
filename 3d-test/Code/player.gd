@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
-@export var speed = 8
-@export var Dodge_speed = 20
-@export var fall_acceleration = 75
-@export var jump_impulse = 20
-@export var bounce_impulse = 16
+var speed = 8
+var Dodge_speed = 20
+var fall_acceleration = 75
+var jump_impulse = 20
+var bounce_impulse = 16
 
-var start = 325
+var start = 295
 var dodge = 0
 var direction = Vector3.ZERO
 
@@ -19,7 +19,7 @@ func _physics_process(delta):
 			rotation.z = 0
 			$Sprite3D.rotation.y = -rotation.y
 			if dodge != 0:
-				if dodge < 38:
+				if dodge < 38 and dodge > 6:
 					velocity = -transform.basis.z * Dodge_speed
 				else:
 					velocity.x = 0
@@ -49,9 +49,9 @@ func _physics_process(delta):
 				continue
 	else:
 		start-=1
-		if start < 163:
-			$AnimationPlayer.current_animation="Start"
-		if start == 0:
+		if start != 0:
+			$AnimationPlayer.current_animation="Hybrid Start"
+		else:
 			$AnimationPlayer.current_animation="Idle"
 	global_position.x = clamp(global_position.x, -8, 8)
 	global_position.z = clamp(global_position.z, -3, 4)

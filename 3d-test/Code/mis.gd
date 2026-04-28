@@ -5,20 +5,23 @@ func _ready():
 	$AnimationPlayer.play("start")
 
 var timerNeku = 0
-var hp = 882
+var hp = 1000
 var dmg = 0
+var mdmg = 882 / float(hp)
+var rdmg = 0
 var damageNeku = 1081
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Down"):
 		timerNeku = 20
-		dmg = 20
+		dmg = 15
+		rdmg = mdmg * dmg
 		hp -= dmg
 		if hp < 0:
 			hp += dmg
-			dmg = hp
+			rdmg = mdmg * hp
 			hp = 0
-		damageNeku -= dmg
+		damageNeku -= rdmg
 	if $Normal/Down/Damage.global_position.x != damageNeku:
 		$Normal/Down/Damage.global_position.x -= 4
 	if $Normal/Down/Missing.global_position.x != damageNeku and timerNeku == 0:
